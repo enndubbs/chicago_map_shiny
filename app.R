@@ -101,7 +101,7 @@ server <- function(input, output, session) {
   
   if (!requireNamespace("webshot2", quietly = TRUE)) install.packages("webshot2")
   
-  output$downloadMap <- downloadHandler(
+  output$export_Map <- downloadHandler(
     filename = function() { paste0("chicago_turnout_map_", input$var, ".png") },
     content = function(file) {
       webshot::install_phantomjs()  # Ensure PhantomJS is installed
